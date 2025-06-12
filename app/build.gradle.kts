@@ -36,7 +36,8 @@ android {
 }
 
 dependencies {
-    implementation("androidx.fragment:fragment:1.8.8")
+    implementation("androidx.fragment:fragment-ktx:1.8.8")
+    implementation("com.prolificinteractive:material-calendarview:1.4.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
