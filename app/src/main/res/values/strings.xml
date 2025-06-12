@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">taskhelper</string>
+    <string name="stats_text">Stats</string>
+    <string name="add_task_text">Add task</string>
+</resources>
