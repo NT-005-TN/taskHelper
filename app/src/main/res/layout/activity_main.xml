@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@color/backgroundColor"
     >
 
     <LinearLayout
@@ -23,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="end"
+            android:layout_gravity="center"
             >
 
             <com.google.android.material.button.MaterialButton
@@ -33,6 +34,7 @@
                 android:layout_margin="8dp"
                 android:minWidth="24dp"
                 android:minHeight="48dp"
+                android:textSize="14sp"
                 android:text="@string/add_task_text"
                 android:textColor="@color/black"
                 app:backgroundTint="@color/buttonColor"
@@ -46,6 +48,7 @@
                 android:layout_margin="8dp"
                 android:minWidth="24dp"
                 android:minHeight="48dp"
+                android:textSize="14sp"
                 android:text="@string/stats_text"
                 android:textColor="@color/black"
                 app:backgroundTint="@color/buttonColor"
@@ -57,8 +60,12 @@
             android:id="@+id/taskList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/navigationLayout"
-            app:layout_constraintTop_toBottomOf="parent" />
+            app:layout_constraintTop_toBottomOf="parent"
+            android:layout_margin="8dp"
+            android:background="@android:drawable/editbox_background"/>
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

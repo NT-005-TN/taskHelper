@@ -2,22 +2,37 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/addTask"
+    android:background="@color/backgroundColor">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Создание задачи"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            />
+
         <EditText
+            android:id="@+id/enterTitleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="96dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
             android:hint="@string/enter_title_text"
             android:minWidth="48dp"
             android:minHeight="48dp"
@@ -27,10 +42,12 @@
             android:background="@android:drawable/editbox_background" />
 
         <EditText
+            android:id="@+id/enterDescText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
+            android:textColor="@color/black"
             android:hint="@string/enter_description_text"
             android:minWidth="48dp"
             android:minHeight="48dp"
@@ -52,6 +69,7 @@
                 android:layout_marginTop="8dp"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
+                android:textColor="@color/black"
                 android:background="@android:drawable/editbox_background" />
 
             <Spinner
@@ -62,17 +80,30 @@
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/black"
                 android:background="@android:drawable/editbox_background"
                 />
 
-
         </LinearLayout>
 
-        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/editbox_background"
+            android:text="@string/enter_deadline_text"
+            android:layout_margin="8dp"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:outlineAmbientShadowColor="@color/black"
+            android:outlineSpotShadowColor="@color/black"
             />
 
         <com.google.android.material.button.MaterialButton
@@ -83,6 +114,7 @@
             android:layout_margin="4dp"
             android:minWidth="96dp"
             android:minHeight="48dp"
+            android:textSize="14sp"
             android:text="@string/create_task_text"
             android:textColor="@color/black"
             app:backgroundTint="@color/buttonColor"

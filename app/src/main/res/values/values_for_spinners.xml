@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="importance_data">
+        <item>Выберите важность</item>
+        <item>Высокая</item>
+        <item>Средняя</item>
+        <item>Низкая</item>
+    </string-array>
+
+    <string-array name="color_data">
+        <item>Выберите цвет</item>
+        <item>Красный</item>
+        <item>Зелёный</item>
+        <item>Жёлтый</item>
+        <item>Синий</item>
+    </string-array>
+</resources>
