@@ -16,7 +16,7 @@ class AddTaskActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddTaskBinding.inflate(layoutInflater)
-        setContentView(binding.addTask)
+        setContentView(binding.root)
 
         val importanceAdapter = ArrayAdapter.createFromResource(
             this,
