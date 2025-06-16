@@ -87,9 +87,9 @@ class AddTaskActivity : AppCompatActivity() {
                 color = color,
                 )
 
-            val resultIntent = Intent(this, MainActivity::class.java)
+            val resultIntent = Intent()
             resultIntent.putExtra("task", task)
-            setResult(Activity.RESULT_OK, resultIntent)
+            setResult(RESULT_OK, resultIntent)
             finish()
         }
 
