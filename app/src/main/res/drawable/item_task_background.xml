@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#F5F7FA"/> <!-- Светлый фон -->
+
+    <stroke
+        android:width="1dp"
+        android:color="#B0C4DE"/> <!-- Бирюзово-голубой оттенок -->
+
+    <corners android:radius="12dp"/> <!-- Закругление углов -->
+
+    <padding
+        android:left="8dp"
+        android:right="8dp"
+        android:top="8dp"
+        android:bottom="8dp"/>
+</shape>

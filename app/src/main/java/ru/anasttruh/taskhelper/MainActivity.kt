@@ -2,14 +2,15 @@ package ru.anasttruh.taskhelper
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import ru.anasttruh.taskhelper.AddTaskActivity
 import ru.anasttruh.taskhelper.databinding.ActivityMainBinding
+import ru.anasttruh.taskhelper.Task
+import ru.anasttruh.taskhelper.TaskAdapter
+import ru.anasttruh.taskhelper.StatsActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,16 +18,25 @@ class MainActivity : AppCompatActivity() {
     private val taskList = mutableListOf<Task>()
     private lateinit var adapter: TaskAdapter
 
-    companion object {
-        private const val ADD_TASK_REQUEST_CODE = 1
+    private val addTaskLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val task = result.data?.getSerializableExtra("task") as? Task
+            task?.let {
+                taskList.add(it)
+                adapter.notifyDataSetChanged()
+                Log.d("TaskHelper", "Добавлена задача: ${it.title}")
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root) // <-- исправлено
+        setContentView(binding.root)
 
-        binding.taskList.layoutManager = LinearLayoutManager(this) // <-- добавлено
+        binding.taskList.layoutManager = LinearLayoutManager(this)
 
         adapter = TaskAdapter(taskList) { task ->
             Log.d("TaskHelper", "Click on task: ${task.title}")
@@ -36,26 +46,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnAddTask.setOnClickListener {
             val intent = Intent(this, AddTaskActivity::class.java)
-            startActivityForResult(intent, ADD_TASK_REQUEST_CODE)
+            addTaskLauncher.launch(intent)
         }
 
         binding.btnStats.setOnClickListener {
             val intent = Intent(this, StatsActivity::class.java)
             startActivity(intent)
         }
-    }
 
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if(requestCode == ADD_TASK_REQUEST_CODE && resultCode == RESULT_OK && data != null){
-            val task = data.getSerializableExtra("task") as? Task
-            task?.let{
-                taskList.add(it)
-                adapter.notifyDataSetChanged()
-                Log.d("TaskHelper", "Добавлена задача: ${it.title}")
-            }
-        }
     }
 }

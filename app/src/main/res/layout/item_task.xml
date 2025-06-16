@@ -4,14 +4,21 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="?attr/selectableItemBackground">
+    android:gravity="center"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/item_task_background">
 
-    <TextView
+   <TextView
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:text="______"
+        android:layout_margin="8dp"
+        android:singleLine="false"
+        android:maxLines="10"
+        android:ellipsize="none"
         android:textColor="@android:color/black" />
 
     <TextView
@@ -19,7 +26,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
+        android:singleLine="false"
         android:textStyle="bold"
+        android:text="______"
+        android:layout_margin="8dp"
+        android:maxLines="10"
+        android:ellipsize="none"
         android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/textDeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="______"
+        android:textSize="18sp"
+        android:singleLine="false"
+        android:maxLines="10"
+        android:ellipsize="none"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:textColor="@android:color/black"/>
+
+    <CheckBox
+        android:id="@+id/checkDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Готово"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Удалить"
+        android:textSize="16sp" />
 
 </LinearLayout>
