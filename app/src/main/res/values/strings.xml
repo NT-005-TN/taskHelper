@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">taskhelper</string>
     <string name="stats_text">Статистика</string>
-    <string name="add_task_text">Добавить задачц</string>
+    <string name="add_task_text">Добавить задачу</string>
     <string name="enter_title_text">Введите название задачи</string>
     <string name="enter_description_text">Введите описание задачи</string>
     <string name="enter_deadline_text">Введите дедлайн</string>
     <string name="create_task_text">Создать</string>
+    <string name="edit_task_text">Готово</string>
+    <string name="to_tasks_text">К задачам</string>
+    <string name="all_completed_tasks_text">Всего: \nВыполнено:</string>
 </resources>
